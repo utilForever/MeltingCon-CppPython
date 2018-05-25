@@ -17,6 +17,7 @@ set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/lib)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 # Includes
+include_directories(Includes)
 include_directories(Libraries/pybind11/include)
 
 # Compile options
@@ -31,7 +32,9 @@ endif()
 set(CMAKE_MACOSX_RPATH ON)
 
 # Project modules
+add_subdirectory(Sources/Core)
 add_subdirectory(Libraries/pybind11)
 if(BUILD_FROM_PIP)
     set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${DEFAULT_CMAKE_LIBRARY_OUTPUT_DIRECTORY})
 endif()
+add_subdirectory(Sources/API/Python)
