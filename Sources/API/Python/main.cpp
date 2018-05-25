@@ -1,4 +1,5 @@
 #include <API/Python/Add.h>
+#include <API/Python/Person.h>
 
 #include <pybind11/pybind11.h>
 
@@ -12,4 +13,8 @@ PYBIND11_MODULE(pyCppPython, m)
     AddFuncAdd(m);
     AddFuncAddWithKeyword(m);
     AddFuncAddWithDefArg(m);
+
+    AddPerson(m);
+    AddPersonWithLambda(m);
+    AddPersonWithField(m);
 }

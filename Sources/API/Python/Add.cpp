@@ -6,7 +6,6 @@
 void AddFuncAdd(pybind11::module& m)
 {
     m.def("Add", &Add, "A function which adds two numbers");
-    
 }
 
 void AddFuncAddWithKeyword(pybind11::module& m)
