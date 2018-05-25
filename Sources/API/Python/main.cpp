@@ -9,5 +9,7 @@ PYBIND11_MODULE(pyCppPython, m)
             MeltingCon 2018 - \"Make Python API using C++\" Example Code 
         )pbdoc";
 
-    AddAdd(m);
+    AddFuncAdd(m);
+    AddFuncAddWithKeyword(m);
+    AddFuncAddWithDefArg(m);
 }

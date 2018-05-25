@@ -3,6 +3,8 @@
 
 #include <pybind11/pybind11.h>
 
-void AddAdd(pybind11::module& m);
+void AddFuncAdd(pybind11::module& m);
+void AddFuncAddWithKeyword(pybind11::module& m);
+void AddFuncAddWithDefArg(pybind11::module& m);
 
 #endif
