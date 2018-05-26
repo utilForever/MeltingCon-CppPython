@@ -19,8 +19,7 @@ PYBIND11_MODULE(pyCppPython, m)
     AddFuncAddWithDefArg(m);
 
     AddPerson(m);
-    AddPersonWithLambda(m);
-    AddPersonWithField(m);
+    AddPersonv2(m);
 
     AddAnimal(m);
     AddDog(m);

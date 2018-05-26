@@ -6,8 +6,16 @@
 struct Person
 {
     Person(std::string name);
-    Person(std::string name, std::string homeAddress);
-    Person(std::string name, std::string homeAddress, std::string SSN);
+
+    void SetName(const std::string& _name);
+    const std::string& GetName() const;
+
+    std::string name;
+};
+
+struct Personv2
+{
+    Personv2(std::string name, std::string homeAddress, std::string SSN);
 
     void SetName(const std::string& _name);
     const std::string& GetName() const;
@@ -19,7 +27,7 @@ struct Person
 
     std::string name;
 
-private:
+ private:
     std::string homeAddress;
     std::string SSN;
 };

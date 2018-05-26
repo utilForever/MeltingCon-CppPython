@@ -7,20 +7,6 @@ void AddPerson(pybind11::module& m)
 {
     pybind11::class_<Person>(m, "Person")
         .def(pybind11::init<const std::string&>())
-        .def(pybind11::init<const std::string&, const std::string&>())
-        .def(pybind11::init<const std::string&, const std::string&,
-                            const std::string&>())
-        .def("SetName", &Person::SetName)
-        .def("GetName", &Person::GetName);
-}
-
-void AddPersonWithLambda(pybind11::module& m)
-{
-    pybind11::class_<Person>(m, "PersonWithLambda")
-        .def(pybind11::init<const std::string&>())
-        .def(pybind11::init<const std::string&, const std::string&>())
-        .def(pybind11::init<const std::string&, const std::string&,
-                            const std::string&>())
         .def("SetName", &Person::SetName)
         .def("GetName", &Person::GetName)
         .def("__repr__", [](const Person& p) {
@@ -28,16 +14,13 @@ void AddPersonWithLambda(pybind11::module& m)
         });
 }
 
-void AddPersonWithField(pybind11::module& m)
+void AddPersonv2(pybind11::module& m)
 {
-    pybind11::class_<Person>(m, "PersonWithField")
-        .def(pybind11::init<const std::string&>())
-        .def(pybind11::init<const std::string&, const std::string&>())
+    pybind11::class_<Personv2>(m, "Personv2")
         .def(pybind11::init<const std::string&, const std::string&,
                             const std::string&>())
-        .def_readwrite("name", &Person::name)
-        .def_property("homeAddress", &Person::GetHomeAddress,
-                      &Person::SetHomeAddress)
-        .def_property_readonly("SSN", &Person::GetSSN);
-        
+        .def_readwrite("name", &Personv2::name)
+        .def_property("homeAddress", &Personv2::GetHomeAddress,
+                      &Personv2::SetHomeAddress)
+        .def_property_readonly("SSN", &Personv2::GetSSN);       
 }

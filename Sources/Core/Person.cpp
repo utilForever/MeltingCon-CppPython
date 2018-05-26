@@ -5,20 +5,6 @@ Person::Person(std::string name) : name(std::move(name))
     // Do nothing
 }
 
-Person::Person(std::string name, std::string homeAddress)
-    : name(std::move(name)), homeAddress(std::move(homeAddress))
-{
-    // Do nothing
-}
-
-Person::Person(std::string name, std::string homeAddress, std::string SSN)
-    : name(std::move(name)),
-      homeAddress(std::move(homeAddress)),
-      SSN(std::move(SSN))
-{
-    // Do nothing
-}
-
 void Person::SetName(const std::string& _name)
 {
     name = _name;
@@ -29,17 +15,35 @@ const std::string& Person::GetName() const
     return name;
 }
 
-void Person::SetHomeAddress(const std::string& _homeAddress)
+Personv2::Personv2(std::string name, std::string homeAddress, std::string SSN)
+    : name(std::move(name)),
+      homeAddress(std::move(homeAddress)),
+      SSN(std::move(SSN))
+{
+    // Do nothing
+}
+
+void Personv2::SetName(const std::string& _name)
+{
+    name = _name;
+}
+
+const std::string& Personv2::GetName() const
+{
+    return name;
+}
+
+void Personv2::SetHomeAddress(const std::string& _homeAddress)
 {
     homeAddress = _homeAddress;
 }
 
-const std::string& Person::GetHomeAddress() const
+const std::string& Personv2::GetHomeAddress() const
 {
     return homeAddress;
 }
 
-const std::string& Person::GetSSN() const
+const std::string& Personv2::GetSSN() const
 {
     return SSN;
 }
