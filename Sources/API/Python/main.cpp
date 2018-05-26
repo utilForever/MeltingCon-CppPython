@@ -1,5 +1,6 @@
 #include <API/Python/Add.h>
 #include <API/Python/Person.h>
+#include <API/Python/Animal.h>
 
 #include <pybind11/pybind11.h>
 
@@ -17,4 +18,8 @@ PYBIND11_MODULE(pyCppPython, m)
     AddPerson(m);
     AddPersonWithLambda(m);
     AddPersonWithField(m);
+
+    AddAnimal(m);
+    AddDog(m);
+    AddCallGo(m);
 }
