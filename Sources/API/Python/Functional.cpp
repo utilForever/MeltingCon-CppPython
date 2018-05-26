@@ -2,7 +2,6 @@
 #include <Core/Functional.h>
 
 #include <pybind11/pybind11.h>
-#include <pybind11/functional.h>
 
 void AddFunctional(pybind11::module& m)
 {

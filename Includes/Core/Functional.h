@@ -5,7 +5,6 @@
 
 #include <functional>
 
-
 inline int FuncArg(const std::function<int(int)>& f)
 {
     return f(10);
